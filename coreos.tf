@@ -29,3 +29,22 @@ data "aws_ami" "coreos" {
 	}
 
 }
+
+resource "aws_instance" "container_linux" {
+	ami = "${ data.aws_ami.coreos.id }"
+
+	count = "${ var.count }"
+
+	instance_type = "${ var.instance_type }"
+	ebs_optimized = "${ var.ebs_optimized }"
+	vpc_security_group_ids = [ "${ var.vpc_security_group_ids }" ]
+	subnet_id = "${ var.subnet_id }"
+	source_dest_check = "${ var.source_dest_check }"
+	user_data = "${ var.user_data }"
+	iam_instance_profile = "${ var.iam_instance_profile }"
+
+	tags {
+		Name = "${ var.instance_name }"
+		Dept = "${ var.dept_name }"
+	}
+}
