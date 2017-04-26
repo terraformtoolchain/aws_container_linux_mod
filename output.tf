@@ -1,3 +1,3 @@
 output "id" {
-	value = "{ data.aws_ami.coreos.id }"
+	value = "{ aws_instance.container_linux.id }"
 }
