@@ -37,7 +37,7 @@ resource "aws_instance" "container_linux" {
 
 	instance_type = "${ var.instance_type }"
 	ebs_optimized = "${ var.ebs_optimized }"
-	vpc_security_group_ids = [ "${ var.vpc_security_group_ids }" ]
+	vpc_security_group_ids = [ "${ var.security_group_ids }" ]
 	subnet_id = "${ var.subnet_id }"
 	source_dest_check = "${ var.source_dest_check }"
 	user_data = "${ var.user_data }"

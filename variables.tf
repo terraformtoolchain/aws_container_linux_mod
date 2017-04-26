@@ -8,7 +8,7 @@ variable "ebs_optimized" {
 	default = true
 }
 
-variable "vpc_security_group_ids" {
+variable "security_group_ids" {
 	type = "string"
 }
 
