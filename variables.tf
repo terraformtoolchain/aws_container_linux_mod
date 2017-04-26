@@ -1,5 +1,9 @@
 variable "count" {}
 
+variable "ssh_key" {
+	default = ""
+}
+
 variable "instance_type" {
 	type = "string"
 }
