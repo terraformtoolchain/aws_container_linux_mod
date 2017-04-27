@@ -8,6 +8,11 @@ variable "instance_type" {
 	type = "string"
 }
 
+variable "public_instance" {
+	description = "(Optional) Boolean that defines whether or not to allocate a public ip to the instance. Default=False"
+	default = false
+}
+
 variable "ebs_optimized" {
 	default = true
 }

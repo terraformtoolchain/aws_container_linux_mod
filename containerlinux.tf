@@ -36,7 +36,7 @@ resource "aws_instance" "container_linux" {
 	count = "${ var.count }"
 
 	key_name = "${ var.ssh_key }"
-	associate_public_ip_address = true
+	associate_public_ip_address = "${ var.public_instance }"
 	instance_type = "${ var.instance_type }"
 	ebs_optimized = "${ var.ebs_optimized }"
 	vpc_security_group_ids = [ "${ var.security_group_ids }" ]
